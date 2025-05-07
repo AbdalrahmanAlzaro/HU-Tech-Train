@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useAuth } from "../../hooks/AuthContext";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { GraduationCap, KeyRound, User, LogIn } from "lucide-react";
 
 const Student = () => {
   const { login } = useAuth();
+  const navigate = useNavigate();
   const [universityId, setUniversityId] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -20,14 +22,15 @@ const Student = () => {
         { universityId, password }
       );
 
-      login(res.data.data); // set context + localStorage
+      login(res.data.data);
 
       Swal.fire({
         title: "Success",
         text: "Logged in successfully!",
         icon: "success",
-        confirmButtonColor: "#dc2626", // red-600 instead of amber
+        confirmButtonColor: "#dc2626",
       });
+      navigate("/dashboard/student");
     } catch (err) {
       Swal.fire({
         title: "Login Failed",

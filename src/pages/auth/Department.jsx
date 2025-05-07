@@ -68,7 +68,7 @@ const Department = () => {
       });
 
       setTimeout(() => {
-        navigate("/dashboard");
+        navigate("/dashboard/department");
       }, 2000);
     } catch (err) {
       Swal.fire({

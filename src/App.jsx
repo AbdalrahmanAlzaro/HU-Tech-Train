@@ -10,6 +10,10 @@ import Verify from "./pages/auth/Verify";
 import AboutPage from "./pages/About";
 import RegisterCompany from "./pages/auth/RegisterCompany";
 import Department from "./pages/auth/Department";
+import ResetPassword from "./pages/auth/ResetPassword";
+import StudentDashBoard from "./pages/StudentDashBoard";
+import CompanyDashBoard from "./pages/CompanyDashBoard";
+import DepartmentDashBoard from "./pages/DepartmentDashBoard";
 
 function App() {
   return (
@@ -23,9 +27,18 @@ function App() {
             <Route path="/login/company" element={<Company />} />
             <Route path="/verify" element={<Verify />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/register/company" element={<RegisterCompany />} />
+            <Route path="/dashboard/student" element={<StudentDashBoard />} />
+            <Route path="/dashboard/comapny" element={<CompanyDashBoard />} />
+            <Route
+              path="/dashboard/department"
+              element={<DepartmentDashBoard />}
+            />
             <Route path="/register/company" element={<RegisterCompany />} />
             <Route path="/login/department-head" element={<Department />} />
+            <Route
+              path="/auth/resetpassword/:token"
+              element={<ResetPassword />}
+            />
           </Routes>
         </main>
         <Footer />
