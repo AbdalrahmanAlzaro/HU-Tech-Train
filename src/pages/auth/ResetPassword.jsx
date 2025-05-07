@@ -53,7 +53,7 @@ const ResetPassword = () => {
       });
 
       setTimeout(() => {
-        navigate("/dashboard");
+        navigate("/dashboard/comapny");
       }, 2000);
     } catch (err) {
       Swal.fire({

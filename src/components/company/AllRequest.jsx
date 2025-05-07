@@ -158,6 +158,20 @@ const AllRequest = () => {
                 </div>
               </div>
 
+              {app.status.toLowerCase() === "approved" && (
+                <div className="mt-4 pt-3 border-t border-gray-200">
+                  <a
+                    href={`https://railway-system-production-1a43.up.railway.app/${app.officialDocument}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition duration-150 ease-in-out"
+                  >
+                    <FileText className="w-4 h-4 mr-2" />
+                    View Official Document
+                  </a>
+                </div>
+              )}
+
               <div className="mt-4 pt-3 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <a
                   href={`https://railway-system-production-1a43.up.railway.app/${app.cv}`}
